@@ -1,0 +1,87 @@
+
+//initializing/creating repository
+//(for new or existing project/folder, can git init once per project).
+git init
+
+//to know who is changing the code etc. Do not use --global if there other using the laptop when doing projects etc.
+// Before commit when not using global, you need to config to know the name who is incharge in updating the project etc.
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+
+// git add . (is to add the the file to staging area(to ready for commit/snapshot))
+// git commit -m "First commit" (to put it to commite/make a snapshot/history/version)
+git add .
+git commit -m "First commit"
+
+// to see the status of foler if there is a modified/in staging or not in staging/untrack.
+// In short the status.
+git status
+
+// to see the history of commit/snapshot/versions
+git log/ git log --oneline(same but in oneline to easily know the flow etc.)
+
+
+//Undoing commits (checkout, revert, reset)
+//Used to move around in history or switch branches. It does not delete commits, just lets you view or test them.
+git checkout <commit-id> 
+
+//to go back to your main branch(recent commit)
+git checkout main(or master)
+
+// its like making a copy of the other commit then creating new history of commit of it.
+git revert <commit-id> 
+
+// soft reset, undo commit but keep changes/masasama yung recent commit.
+git reset <commit-id>
+//undo commit and erase changes/d na mababalikan mga recent commit,ma bubura.
+git reset --hard <commit-id
+
+//Full Reset (start fresh with a clean history)
+//If you want to reset everything but keep your latest files, will clean the commit history in local
+// need to be in the master/main branch
+git checkout --orphan clean-main
+
+
+
+//Git branches
+// git branch - to see how many branch i have
+git branch 
+
+//create branch
+git branch <name of branch>
+//shortcut for automatic switch to the new branch and make it at the same time, its like combining the git branch and checkout
+git checkout -b <name of branch>
+
+//same to switching to other commits
+git checkout feature(name of new branch)
+
+//To avoid conflict, always use the updated commit in the main branch. When working on a team always pull the latest code before making new branch.
+//Merging branches 
+// to merge the branch to the main branch
+git merge <name of branch>
+
+//to remove the other branch that i made. Need to go back to main branch to delete the other branch
+git branch -d <target branch>
+
+
+//////GitHub Intro
+//git push- to activate the signin, to connect to GitHub and make it remote
+git push https://github.com/snakU02/Git-tuts.git master(link/URL of repository u make in github)
+
+//This is use so whenever I do push i dont need to always put the url, the  'origin' is just alias, can be modified. I just need to type this, git push //origin master(or main)
+git remote add origin <the URL>
+
+// to push the new commit/version of the codes to Github
+git push origin master(or main)
+
+
+
+/////FOR THE OTHER MEMBER/TEAM THAT WANTS TO CONTRIBUTE TO THE REPOSITORY/PROJECT
+//make a folder first their pc
+//open in vscode and make a clone first before pushing a updated code and pull etc.
+git clone <url of the repository/project>
+
+
+
+
+
